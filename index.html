@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>Asset Allocation</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -65,6 +62,14 @@
 			.reveal ul.left-indent{
 				margin-left: 100px;
 			}
+			.reveal section img.no-border,.reveal a img.no-border,.reveal a:hover img.no-border {
+				background: rgba(255, 255, 255, 0);
+				border: 0;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+			}
+			.reveal section{
+				width: 100%!important;
+			}
 		</style>
 
 		<!--[if lt IE 9]>
@@ -76,7 +81,6 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<h1>ASSET ALLOCATION</h1>
@@ -147,7 +151,7 @@
 				<section>
 					<h2>Model Portfolio</h2>
 					<p>Capital Appreciation</p>
-					<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+					<div id="container" style="margin: 0 auto"></div>
 				</section>
 
 				<section>
@@ -221,6 +225,8 @@
 						</table>
 						<p>
 							<a href="#/4" class="small">Back to chart</a>
+							<br>
+							<a href="#/5"><img src="arrow_up.png" class="no-border" alt="Go up"></a>
 						</p>
 					</section><!--fixed income-->
 					<section>
@@ -259,6 +265,8 @@
 						</table>
 						<p>
 							<a href="#/4" class="small">Back to chart</a>
+							<br>
+							<a href="#/5"><img src="arrow_up.png" class="no-border" alt="Go up"></a>
 						</p>
 					</section><!--equity-->
 					<section>
@@ -297,6 +305,8 @@
 						</table>
 						<p>
 							<a href="#/4" class="small">Back to chart</a>
+							<br>
+							<a href="#/5"><img src="arrow_up.png" class="no-border" alt="Go up"></a>
 						</p>
 					</section><!--commodities-->
 				</section>
@@ -332,6 +342,8 @@
 								</ul>
 							</li>
 						</ul>
+						<br>
+						<a href="#/7/1"><img src="arrow_down.png" class="no-border" alt="Next"></a>
 					</section>
 					<section>
 						<h2>Short-term Performance</h2>
@@ -355,6 +367,8 @@
 								</ul>
 							</li>
 						</ul>
+						<br>
+						<a href="#/7"><img src="arrow_up.png" class="no-border" alt="Go up"></a>
 					</section>
 				</section>
 
@@ -386,7 +400,7 @@
 				</section>
 
 				<section>
-					<h2>Expected Performance vs. Target Return</h2>
+					<h2>Expected Performance<br>vs. Target Return</h2>
 					<div class="text-left">
 						<strong>To recap:</strong><br>
 						<ul class="medium left-indent">
@@ -476,19 +490,13 @@
 				dependencies: [
 					{ src: 'js/jquery.min.js' },
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/highcharts/highcharts.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'piechart.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/highcharts/highcharts.js', async: false, condition: function() { return !!document.body.classList; } },
+					{ src: 'piechart.js', async: false, condition: function() { return !!document.body.classList; } }
 				]
-			}).callback(function(){
 			});
 
 		</script>
-
 
 
 	</body>
