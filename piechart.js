@@ -37,7 +37,12 @@
 							},
 							events: {
 								click: function(event) {
-									Reveal.slide(2, 1+event.point.x);
+									if(event.point.x <= 2){
+										Reveal.slide(5, 1+event.point.x);
+									}
+									if(event.point.x == 3){
+										Reveal.slide(5, 3);
+									}
 								}
 							}
 						}
@@ -46,17 +51,11 @@
 						type: 'pie',
 						name: 'Browser share',
 						data: [
-							['Firefox',   45.0], // x= 0
-							['IE',       26.8], // x= 1
-							{
-								name: 'Chrome',
-								y: 12.8,
-								sliced: true,
-								selected: true
-							},
-							['Safari',    8.5],
-							['Opera',     6.2],
-							['Others',   0.7]
+							['Fixed income', 30], // x= 0
+							['Equity',       55], // x= 1
+							['Real estate',  6],  // x= 2
+							['Commodities',  5],  // x= 3
+							['Cash',         4]   // x= 4
 						],
 					}]
 				});
